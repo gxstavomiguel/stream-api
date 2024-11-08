@@ -3,6 +3,8 @@ import java.util.List;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 
+import static java.util.stream.Collectors.toList;
+
 public class FunctionExample {
 
     public static void main(String[] args) {
@@ -14,7 +16,7 @@ public class FunctionExample {
 
         //Usar a função para dobrar todos os números no Stream e armazená-los em outra lista
         List<Integer> numerosDobrados = numeros.stream()
-                .map(dobrar)
+                .map(n -> n*2)
                 .toList();
 
         numerosDobrados.forEach(System.out::println);
