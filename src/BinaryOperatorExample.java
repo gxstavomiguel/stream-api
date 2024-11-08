@@ -11,11 +11,11 @@ public class BinaryOperatorExample
         List<Integer> numeros = Arrays.asList(1, 2, 3, 4, 5);
 
         // usar o BinaryOperator com expressão lambda para somar dois númeors inteiros
-        BinaryOperator<Integer> somar = (num1, num2) -> num1 + num2;
+        BinaryOperator<Integer> somar = Integer::sum;
 
         // Usar o BinaryOperator para somar todos os números no Stream
         int resultado = numeros.stream()
-                .reduce(0, somar);
+                .reduce(0, Integer::sum);
 
         System.out.println("A soma dos números é: " + resultado);
     }
